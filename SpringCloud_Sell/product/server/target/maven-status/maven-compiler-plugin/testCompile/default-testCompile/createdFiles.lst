@@ -1,0 +1,5 @@
+com/imooc/repository/ProductInfoRepositoryTest.class
+com/imooc/service/ProductServiceTest.class
+com/imooc/repository/ProductCategoryRepositoryTest.class
+com/imooc/ProductApplicationTests.class
+com/imooc/service/CategoryServiceTest.class

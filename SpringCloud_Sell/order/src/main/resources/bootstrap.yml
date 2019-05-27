@@ -1,0 +1,121 @@
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+#      bootstrap.yml文件中默认先读取这个eureka地址
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: order
+
+  cloud:
+    config:
+      discovery:
+        enabled: true
+#        对应配置中心名
+        service-id: CONFIG
+#        对应环境名
+      profile: test
+
+  zipkin:
+    base-url: http://zipkin:9411/
+    sender:
+      type: web
+  #   抽样的百分比观察，比如默认只把百分之10
+  sleuth:
+    sampler:
+      probability: 1
+#hystrix超时配置
+hystrix:
+  command:
+    getProductInfoList:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+#配置feign-hystrix
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        readTimeout: 20000
+        connectTimeout: 50000
+
+management:
+  context-path: /
+logging:
+  level:
+    org.springframework.cloud.netflix.feign: debug
+
+
+
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+#  instance:
+#    prefer-ip-address: true
+#
+#spring:
+#  application:
+#    name: order
+#
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: CONFIG
+#      profile: test
+#
+#  zipkin:
+#    base-url: http://zipkin:9411/
+#    sender:
+#      type: web
+#  #   抽样的百分比观察，比如默认只把百分之10
+#  sleuth:
+#    sampler:
+#      probability: 1
+##hystrix超时配置
+#hystrix:
+#  command:
+#    getProductInfoList:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000
+#
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 5000
+#
+##配置feign-hystrix
+#feign:
+#  hystrix:
+#    enabled: true
+#  client:
+#    config:
+#      default:
+#        readTimeout: 20000
+#        connectTimeout: 50000
+#
+#management:
+#  context-path: /
+#logging:
+#  level:
+#    org.springframework.cloud.netflix.feign: debug
+
