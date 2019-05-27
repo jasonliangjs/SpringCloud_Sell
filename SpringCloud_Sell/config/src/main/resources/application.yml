@@ -6,8 +6,8 @@ spring:
       server:
         git:
           uri: https://gitee.com/jason1215/config-repo
-          username: jason1215
-          password: jason1215gitee
+          username: ***********
+          password: ***********
           basedir: /Users/jason/code/myProjects/java/SpringCloud_Sell/config/basedir
 
 eureka:
@@ -35,8 +35,8 @@ management:
 #      server:
 #        git:
 #          uri: https://gitee.com/jason1215/config-repo
-#          username: jason1215
-#          password: jason1215gitee
+#          username: *******************
+#          password: *******************
 #          basedir: /Users/jason/code/myProjects/java/SpringCloud_Sell/config/basedir
 #
 #eureka:
