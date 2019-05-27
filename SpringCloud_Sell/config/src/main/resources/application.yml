@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/jason1215/config-repo
+          uri: https://gitee.com/******/config-repo
           username: ***********
           password: ***********
           basedir: /Users/jason/code/myProjects/java/SpringCloud_Sell/config/basedir
@@ -34,7 +34,7 @@ management:
 #    config:
 #      server:
 #        git:
-#          uri: https://gitee.com/jason1215/config-repo
+#          uri: https://gitee.com/******/config-repo
 #          username: *******************
 #          password: *******************
 #          basedir: /Users/jason/code/myProjects/java/SpringCloud_Sell/config/basedir
